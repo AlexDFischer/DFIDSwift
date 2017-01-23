@@ -1,0 +1,6 @@
+framework module Pods_DFIDSwift {
+  umbrella header "Pods-DFIDSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
