@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DFIDSwift/DFID.swift"
-            timestampString = "507220984.669068"
+            timestampString = "507223035.27625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "canOpenApps()"
             landmarkType = "7">
          </BreakpointContent>

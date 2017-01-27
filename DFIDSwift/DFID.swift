@@ -24,10 +24,10 @@ public class DFID: NSObject {
     }
     
     static func canOpenApps() -> String {
-        let apps: [String] = ["tel://", "sms://", "fb://", "twitter://", "ibooks://", "comgooglemaps://", "pcast://", "mgc://", "youtube://", "googlechrome://", "googledrive://", "googlevoice://", "firefox://"];
+        let apps: [String] = ["tel", "sms", "fb", "twitter", "ibooks", "comgooglemaps", "pcast", "mgc", "youtube", "googlechrome", "googledrive", "googlevoice", "ohttp", "firefox"];
         var installed: [String] = [];
         for app in apps {
-            let url = NSURL(string: (app + "test"))!;
+            let url = NSURL(string: (app + "://test"))!;
             if (UIApplication.shared.canOpenURL(url as URL)) {
                 installed.append("T");
             } else {
