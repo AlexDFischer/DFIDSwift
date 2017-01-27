@@ -21,10 +21,11 @@ class DFIDSwiftTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testPrintDFID() {
         //let dfid: String = DFID.dfid();
         //print(dfid);
-        print("DFID is: " + DFID.dfid());
+        print("raw string is: " + DFID.buildRawString() + "\n");
+        print("DFID is: " + DFID.dfid() + "\n");
     }
     
 }

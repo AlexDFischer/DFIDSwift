@@ -1,17 +1,17 @@
-//
-//  DFID.swift
-//  DFIDSwift
-//
-//  Created by Alexander Fischer on 1/16/17.
-//  Copyright © 2017 UMass CS. All rights reserved.
-//
-
 import UIKit
 import CoreTelephony
 
 public class DFID: NSObject {
     
     static let DFID_VERSION: String = "dfid_v8_alpha";
+    
+    static func systemName() -> String {
+        var size: Int = 0;
+        sysctlbyname("hw.machine", nil, &size, nil, 0);
+        var name: [CChar] = [CChar](repeating: 0, count: size);
+        sysctlbyname("hw.machine", &name, &size, nil, 0);
+        return String(cString: name);
+    }
     
     static func diskSpace() -> Int64 {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
@@ -24,7 +24,7 @@ public class DFID: NSObject {
     }
     
     static func canOpenApps() -> String {
-        let apps: [String] = ["tel://", "sms://", "fb://", "twitter://", "ibooks://"];
+        let apps: [String] = ["tel://", "sms://", "fb://", "twitter://", "ibooks://", "comgooglemaps://", "pcast://", "mgc://", "youtube://", "googlechrome://", "googledrive://", "googlevoice://", "firefox://"];
         var installed: [String] = [];
         for app in apps {
             let url = NSURL(string: (app + "test"))!;
@@ -60,9 +60,10 @@ public class DFID: NSObject {
         return carrierInfo.joined(separator: ",");
     }
     
-    static func buildRawString() -> String {
+    public static func buildRawString() -> String {
         var components: [String] = [String]();
         components.append(DFID_VERSION);
+        components.append(systemName());
         components.append(String(diskSpace()));
         components.append(canOpenApps());
         components.append(hasCydia() ? "hasCydia" : "does not have Cydia");
@@ -73,11 +74,7 @@ public class DFID: NSObject {
     
     public static func dfid() -> String {
         let rawString: String = buildRawString();
-        //let data = rawString.data(using: String.Encoding.utf8);
-        //var digest: [UInt8] = [UInt8](Int(CC_SHA1_DIGEST_LENGTH));
-        //CC_SHA1(data, data.length, digest);
-        //let hexBytes: [String] = digest.map { String(format: "%02hhx", $0) };
-        //return hexBytes.joined();
+        // doesn't hash it yet because importing common crypto library is ungodly complicated in swift
         return rawString;
     }
 

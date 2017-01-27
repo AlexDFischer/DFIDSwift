@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2ED6F6191E2D3B120080191E"
+               BuildableName = "DFIDSwiftTests.xctest"
+               BlueprintName = "DFIDSwiftTests"
+               ReferencedContainer = "container:DFIDSwift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2ED6F6051E2D1FB30080191E"
+            BuildableName = "DFIDSwift.framework"
+            BlueprintName = "DFIDSwift"
+            ReferencedContainer = "container:DFIDSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
