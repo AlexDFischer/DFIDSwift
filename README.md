@@ -3,18 +3,21 @@
 First, make sure Cocoa Pods is installed. You may want to run `pod repo update` because this pod is so new. Create your project in XCode. Run `pod init` in the project directory. In the Podfile that was created, put the following:
 
     platform :ios, '8.0'
-
     source 'https://github.com/CocoaPods/Specs.git'
-
     use_frameworks!
-
     target 'YOUR_PROJECT_NAME_HERE’ do
         pod 'DFIDSwift', '~> 0.1.3'
     end
+    # Following lines make it compatible with Objective-C, you can remove them if you're using Swift.
+    post_install do |installer|
+      installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+          config.build_settings['SWIFT_VERSION'] = '3.0'
+    	end
+      end
+    end
     
 Now do the command `pod install` in the project directory. This should install DFIDSwift in the current XCode project. Make sure to follow the warning that pod tells you to "Please close any current Xcode sessions and use `YOUR_PROJECT_NAME_HERE.xcworkspace` for this project from now on."
-
-If you're using Objective-C, select 'Later' when it asks you to convert. Instead, you need to change a build setting: click on 'Pods' in the leftmost panel, go to Build Settings, and search for the build setting swift_version. Change the property 'Use Legacy Swift Language Version' to 'No'.
 
 In order to allow the app to check for installed apps: edit the info.plist file in project directory. Add the following after the first `<dict>` line:
 
