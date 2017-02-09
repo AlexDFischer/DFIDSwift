@@ -177,11 +177,12 @@
 				TargetAttributes = {
 					2ED6F6051E2D1FB30080191E = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					2ED6F6191E2D3B120080191E = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};

@@ -2,7 +2,7 @@ import UIKit
 import CoreTelephony
 
 @objc
-public class DFID: NSObject {
+open class DFID: NSObject {
     
     static let DFID_VERSION: String = "dfid_v8_alpha";
     
