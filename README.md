@@ -14,4 +14,4 @@ First, make sure Cocoa Pods is installed. You may want to run `pod repo update` 
     
 Now do the command `pod install` in the project directory. This should install DFIDSwift in the current XCode project. Make sure to follow the warning that pod tells you to "Please close any current Xcode sessions and use `YOUR_PROJECT_NAME_HERE.xcworkspace` for this project from now on."
 
-To see if it worked, `import DFIDSwift` in some file and try `NSLog("the raw string is: " + DFID.dfid());`.
+To see if it worked, `import DFIDSwift` in some file (or `@import DFIDSwift;` in Objective-C) and try `NSLog("the raw string is: " + DFID.dfid());` (or `NSLog(@"the raw string is: %@\n", [DFID dfid]);` in Objective-C).
