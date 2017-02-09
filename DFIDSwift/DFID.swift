@@ -1,21 +1,17 @@
 import UIKit
 import CoreTelephony
-import MessageUI
 
+@objc
 public class DFID: NSObject {
     
     static let DFID_VERSION: String = "dfid_v8_alpha";
     
-    static func systemType() -> String {
+    static func systemName() -> String {
         var size: Int = 0;
         sysctlbyname("hw.machine", nil, &size, nil, 0);
         var name: [CChar] = [CChar](repeating: 0, count: size);
         sysctlbyname("hw.machine", &name, &size, nil, 0);
-        return String(cString: name);
-    }
-    
-    static func deviceName() -> String {
-        return UIDevice.current.name;
+        return String(describing: name);
     }
     
     static func diskSpace() -> Int64 {
@@ -29,10 +25,10 @@ public class DFID: NSObject {
     }
     
     static func canOpenApps() -> String {
-        let apps: [String] = ["tel", "sms", "fb", "twitter", "ibooks", "comgooglemaps", "pcast", "mgc", "youtube", "googlechrome", "googledrive", "googlevoice", "ohttp", "firefox"];
+        let apps: [String] = ["tel://", "sms://", "fb://", "twitter://", "ibooks://", "comgooglemaps://", "pcast://", "mgc://", "youtube://", "googlechrome://", "googledrive://", "googlevoice://", "firefox://"];
         var installed: [String] = [];
         for app in apps {
-            let url = NSURL(string: (app + "://test"))!;
+            let url = NSURL(string: (app + "test"))!;
             if (UIApplication.shared.canOpenURL(url as URL)) {
                 installed.append("T");
             } else {
@@ -65,26 +61,15 @@ public class DFID: NSObject {
         return carrierInfo.joined(separator: ",");
     }
     
-    static func messageConfigs() -> String {
-        var configs: [String] = [String]();
-        configs.append(MFMailComposeViewController.canSendMail() ? "T" : "F");
-        configs.append(MFMessageComposeViewController.canSendText() ? "T" : "F");
-        configs.append(MFMessageComposeViewController.canSendSubject() ? "T" : "F");
-        configs.append(MFMessageComposeViewController.canSendAttachments() ? "T" : "F");
-        return configs.joined(separator: ",");
-    }
-    
     public static func buildRawString() -> String {
         var components: [String] = [String]();
         components.append(DFID_VERSION);
-        components.append(systemType());
-        components.append(deviceName());
+        components.append(systemName());
         components.append(String(diskSpace()));
         components.append(canOpenApps());
         components.append(hasCydia() ? "hasCydia" : "does not have Cydia");
         components.append(languageList());
         components.append(carrierInfo());
-        components.append(messageConfigs());
         return components.joined(separator: ";");
     }
     
@@ -93,5 +78,5 @@ public class DFID: NSObject {
         // doesn't hash it yet because importing common crypto library is ungodly complicated in swift
         return rawString;
     }
-
+    
 }
