@@ -12,6 +12,7 @@
 		2ED6F61D1E2D3B120080191E /* DFIDSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6F61C1E2D3B120080191E /* DFIDSwiftTests.swift */; };
 		2ED6F61F1E2D3B120080191E /* DFIDSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6F6061E2D1FB30080191E /* DFIDSwift.framework */; };
 		4F74BC598DB38612573AAD46 /* Pods_DFIDSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481275592E9F330F6884E6A1 /* Pods_DFIDSwift.framework */; };
+		64888AEECE331B6D88168E51 /* Pods_DFIDSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C09FEB5B0291374E04FABE9 /* Pods_DFIDSwiftTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		0632B72DD14AF26DB7CB529E /* Pods-DFIDSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFIDSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DFIDSwift/Pods-DFIDSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		0A5B207EE268B0D110F94D7F /* Pods-DFIDSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFIDSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFIDSwiftTests/Pods-DFIDSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		0E665700670B284D24B63295 /* Pods-DFIDSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFIDSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DFIDSwiftTests/Pods-DFIDSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2ED6F6061E2D1FB30080191E /* DFIDSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DFIDSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6F6091E2D1FB30080191E /* DFIDSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFIDSwift.h; sourceTree = "<group>"; };
 		2ED6F60A1E2D1FB30080191E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		2ED6F61C1E2D3B120080191E /* DFIDSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFIDSwiftTests.swift; sourceTree = "<group>"; };
 		2ED6F61E1E2D3B120080191E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		481275592E9F330F6884E6A1 /* Pods_DFIDSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFIDSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C09FEB5B0291374E04FABE9 /* Pods_DFIDSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DFIDSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DFF12B3435A50AEB89D9976 /* Pods-DFIDSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DFIDSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DFIDSwift/Pods-DFIDSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED6F61F1E2D3B120080191E /* DFIDSwift.framework in Frameworks */,
+				64888AEECE331B6D88168E51 /* Pods_DFIDSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				481275592E9F330F6884E6A1 /* Pods_DFIDSwift.framework */,
+				4C09FEB5B0291374E04FABE9 /* Pods_DFIDSwiftTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +115,8 @@
 			children = (
 				0632B72DD14AF26DB7CB529E /* Pods-DFIDSwift.debug.xcconfig */,
 				4DFF12B3435A50AEB89D9976 /* Pods-DFIDSwift.release.xcconfig */,
+				0E665700670B284D24B63295 /* Pods-DFIDSwiftTests.debug.xcconfig */,
+				0A5B207EE268B0D110F94D7F /* Pods-DFIDSwiftTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -151,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2ED6F6221E2D3B120080191E /* Build configuration list for PBXNativeTarget "DFIDSwiftTests" */;
 			buildPhases = (
+				1B4FD828260093D7906BA6A1 /* [CP] Check Pods Manifest.lock */,
 				2ED6F6161E2D3B120080191E /* Sources */,
 				2ED6F6171E2D3B120080191E /* Frameworks */,
 				2ED6F6181E2D3B120080191E /* Resources */,
+				5B08D0211E37F3BA3811BCE6 /* [CP] Embed Pods Frameworks */,
+				36C2A4F8AD5E9F9D3B444395 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,6 +234,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1B4FD828260093D7906BA6A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		2BDF2541A78CBAF45E52F05A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -236,6 +262,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DFIDSwift/Pods-DFIDSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36C2A4F8AD5E9F9D3B444395 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DFIDSwiftTests/Pods-DFIDSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B08D0211E37F3BA3811BCE6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DFIDSwiftTests/Pods-DFIDSwiftTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B54B3300519B71DC46C5288 /* [CP] Check Pods Manifest.lock */ = {
@@ -287,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -341,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -431,6 +489,7 @@
 		};
 		2ED6F6231E2D3B120080191E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E665700670B284D24B63295 /* Pods-DFIDSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DFIDSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -442,6 +501,7 @@
 		};
 		2ED6F6241E2D3B120080191E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A5B207EE268B0D110F94D7F /* Pods-DFIDSwiftTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DFIDSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

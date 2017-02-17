@@ -1,5 +1,6 @@
 import UIKit
 import CoreTelephony
+import CryptoSwift
 
 @objc
 open class DFID: NSObject {
@@ -25,14 +26,12 @@ open class DFID: NSObject {
     }
     
     static func canOpenApps() -> String {
-        let apps: [String] = ["tel://", "sms://", "fb://", "twitter://", "ibooks://", "comgooglemaps://", "pcast://", "mgc://", "youtube://", "googlechrome://", "googledrive://", "googlevoice://", "firefox://"];
+        let apps: [String] = ["tel", "sms", "fb", "twitter", "ibooks", "comgooglemaps", "pcast", "mgc", "youtube", "googlechrome", "googledrive", "googlevoice", "firefox"];
         var installed: [String] = [];
         for app in apps {
-            let url = NSURL(string: (app + "test"))!;
+            let url = NSURL(string: (app + "://test"))!;
             if (UIApplication.shared.canOpenURL(url as URL)) {
-                installed.append("T");
-            } else {
-                installed.append("F");
+                installed.append(app);
             }
         }
         return installed.joined(separator: ",");
@@ -75,8 +74,8 @@ open class DFID: NSObject {
     
     public static func dfid() -> String {
         let rawString: String = buildRawString();
-        // doesn't hash it yet because importing common crypto library is ungodly complicated in swift
-        return rawString;
+        let hash = rawString.sha512();
+        return hash;
     }
     
 }

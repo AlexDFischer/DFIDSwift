@@ -1,10 +1,16 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+def my_pods
+    use_frameworks!
+    pod 'CryptoSwift'
+end
+
 target 'DFIDSwift' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+  my_pods
 
-  # Pods for DFIDSwift
+end
 
+target 'DFIDSwiftTests' do
+    my_pods
 end

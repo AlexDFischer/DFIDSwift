@@ -6,7 +6,7 @@ First, make sure Cocoa Pods is installed. You may want to run `pod repo update` 
     source 'https://github.com/CocoaPods/Specs.git'
     use_frameworks!
     target 'YOUR_PROJECT_NAME_HERE’ do
-        pod 'DFIDSwift', '~> 0.1.3'
+        pod 'DFIDSwift'
     end
     # Following lines make it compatible with Objective-C, you can remove them if you're using Swift.
     post_install do |installer|
