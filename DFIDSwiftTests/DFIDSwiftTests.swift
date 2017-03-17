@@ -22,10 +22,13 @@ class DFIDSwiftTests: XCTestCase {
     }
     
     func testPrintDFID() {
-        //let dfid: String = DFID.dfid();
-        //print(dfid);
         print("raw string is: " + DFID.buildRawString() + "\n");
         print("DFID is: " + DFID.dfid() + "\n");
     }
     
+    func testDictionary() {
+        let dict = DFID.rawData();
+        print("THE DICTIONARY IS:")
+        print(DFID.jsonStringFromDictionary(dict: dict));
+    }
 }
