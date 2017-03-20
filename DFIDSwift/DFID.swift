@@ -34,7 +34,7 @@ open class DFID: NSObject {
         return String(UIDevice.current.batteryLevel);
     }
     
-    static func batteryState() -> String {
+    static func batteryStatus() -> String {
         switch (UIDevice.current.batteryState) {
         case UIDeviceBatteryState.charging:
             return "charging";
@@ -197,7 +197,7 @@ open class DFID: NSObject {
         
         var dict = [String: String]();
         dict.updateValue(deviceOS(),                               forKey: "device_os");
-        dict.updateValue(deviceOSVersion(),                        forKey: "device_os_version");
+        dict.updateValue(deviceOSVersion(),                        forKey: "os_version");
         dict.updateValue(deviceModel(),                            forKey: "device_model");
         dict.updateValue(deviceName(),                             forKey: "device_name");
         dict.updateValue(String(diskSpace()),                      forKey: "disk_space");
@@ -232,8 +232,8 @@ open class DFID: NSObject {
         formatter.dateFormat = "ccc, dd MMM yyyy HH:mm:ss zzz";
         formatter.timeZone = TimeZone.init(abbreviation: "GMT");
         dict.updateValue(formatter.string(from: Date()),                forKey: "measured_at");
-        dict.updateValue(batteryLevel(),                                forKey: "battery_level");
-        dict.updateValue(batteryState(),                                forKey: "battery_state");
+        dict.updateValue(batteryLevel(),                                forKey: "bat_level");
+        dict.updateValue(batteryStatus(),                                forKey: "bat_status");
         dict.updateValue(vendorID(),                                    forKey: "vendor_id");
         dict.updateValue(localGroundTruth(),                            forKey: "local_ground_truth");
         return dict;
